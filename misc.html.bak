@@ -1,0 +1,16 @@
+<HTML>
+<HEADER>
+<TITLE>Astronomical Resources</TITLE>
+</HEADER>
+<!BODY background="img/vangoghback.jpg" TEXT="#DDFFFF" LINK="#000DFF" VLINK="#FF00FF">
+<BODY background="img/bkg2.jpg">
+                                                                                                                                                 
+<FONT COLOR="#FF0000">
+<H1><font color="#003399" face="Arial, Helvetica, sans-serif">Astronomical Wierdos </font></H1>
+<UL>
+  <LI> <font face="Arial, Helvetica, sans-serif"><A HREF=http://www.myciti.com> Citibank </A> </font>
+  <LI> <font face="Arial, Helvetica, sans-serif"><A HREF=http://www.cefcuonline.org> Caltech Employees Federal Credit Union </A> </font>
+  <LI> <font face="Arial, Helvetica, sans-serif"><A HREF=http://www.hfsfcu.org> HFS Federal Credit Union </A> </font>
+</UL>
+</BODY>
+</HTML>

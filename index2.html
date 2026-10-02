@@ -1,0 +1,26 @@
+<script>
+function UpdateText()
+{
+  document.getElementById("subject").value =document.getElementById("Field1").value + " " +   document.getElementById("Field2").value + " " + document.getElementById("Field3").value;
+}
+var updateSubject = function() {
+  var outArray = [];
+  for (var i=0;i<parts.length;i++) {
+      if (parts[i].value !== '' ) {
+        outArray.push(parts[i].value);
+      }
+  }
+  document.getElementById('subject').value = outArray.join(' ');
+};
+var parts = document.getElementsByClassName('part');
+for (var i=0;i<parts.length;i++) {
+  parts[i].onkeydown = updateSubject;
+}
+
+</script>
+
+<input type="text" id="subject" disabled="disabled"/>
+<input type="text" id="Field1" onchange="UpdateText()";/>
+<input type="text" id="Field2" onchange="UpdateText()";/>
+<input type="text" id="Field3" onchange="UpdateText()";/>
+

@@ -1,0 +1,121 @@
+<html>
+<SCRIPT language="JavaScript">
+<!--
+function on_img(move)
+{   var imagelist = new Array(12);
+    var textlist=new Array(12);
+	var index;
+    imagelist[0] ="NImages/RGB_jet_cont_COMs2.jpg";
+	textlist[0]="Witnessing the Onset of Extra-Solar System Formation";
+    imagelist[1]="NImages/Nature_COMS.jpg";
+	textlist[1]="Organic Molecules spotted in star-forming disk";
+    imagelist[2]="NImages/anim_disk_jet.gif";
+	textlist[2]="Jet launched from Accretion Disk";
+    imagelist[3]="NImages/HH211_disk.jpg";
+	textlist[3]="Youngest Accretion Disk detected in HH 211";
+    imagelist[4]="NImages/Picture2_F3_1.jpg"
+	textlist[4]="Jet and Disk Wind";
+    imagelist[5]="NImages/xwind4_rotating.jpeg";
+	textlist[5]="A Spinning Jet from an X-wind Model";
+    imagelist[6]="NImages/HST_ALMA_Disk.jpg";
+	textlist[6]="Feeding a Baby Star Through a Whirlpool in Space";
+    imagelist[7]="NImages/cflee_1105b_large.jpg";
+	textlist[7]="Magnetic Fields Found in Jet From Baby Star";
+    imagelist[8]="NImages/Beer_Hamburger.jpg";
+	textlist[8]="Beer on Space Hamburger around a Baby Star";
+    imagelist[9]="NImages/HH212_Jetwind.png";
+	textlist[9]="First Detection of Jet-Wind Interaction";
+    imagelist[10]="NImages/sio_rotate_press.jpg";
+	textlist[10]="Spinning Bullets from a Young Gun";
+    imagelist[11]="NImages/HH212_COM.jpg";
+	textlist[11]="Life-building blocks detected in Protostellar Disk";
+
+    if (move=="previous"){
+       document.display.number.value--;
+    }
+    if (move=="next"){
+       document.display.number.value++;
+    }
+	if (document.display.number.value==0){
+       document.display.number.value=12;
+	}
+	if (document.display.number.value==13){
+       document.display.number.value=1;
+	}
+	// calculate the array index 
+    index =document.display.number.value - 1;
+	//alert(index);
+    document.picture.src=imagelist[index];
+	document.display.desc.value=textlist[index];
+	document.display.desc.size=textlist[index].length;
+    return;
+}
+
+function initial()
+{   
+    document.display.desc.value="Witnessing the Onset of Extra-Solar System Formation";
+	document.display.number.value=1;
+	//alert(document.display.desc.value);
+}
+// -->
+</SCRIPT>
+
+<head>
+<title>Chin-Fei Lee</title>
+<!link rel="shortcut icon" href="http://sma-www.cfa.harvard.edu/favicon.ico">
+<link rel="icon" href="ICONS/favicon.ico">
+</head>
+
+
+<body bgcolor=#FFFFFF onLoad=initial();>
+<form name="display">
+  <table width="100%" border="0" cellspacing="0" cellpadding="10" align="center">
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><font color="#6666FF" face="Arial, Helvetica, sans-serif">
+          <b><font color="#333399">Chin-Fei Lee </font></b></font>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><img src="images/arrow.gif" width="141" height="34" border="0" usemap="#Map"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center">
+          <font color="#000000" size="3"> 
+           <input type="text" name="desc" border=0 value="Witnessing the Onset of Extra-Solar System Formation" 
+            size=52 disabled="true" style="text-align:center;border:0;font-size:25px;color:black">
+          </font>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <!td height="191" valign="top" align="left"> 
+      <td colspan="9">
+        <div align="center"><img src="NImages/RGB_jet_cont_COMs2.jpg" width=60% border="1" name="picture" 
+            value="Witnessing the Onset of Extra-Solar System Formation"></div>
+      </td>
+    </tr>
+    <tr>
+      <td height="2" valign="top" align="left">
+        <div align="center">
+          <font color="#000000" size="3"> 
+           <!input type="text" name="caption" border=0 
+              value="Composite images of (a) Jet, (b) Accretion Disk, and (c) Organic Atmosphere in the HH 212 Protostellar System." 
+            size=100 disabled="true" style="text-align:center;border:0;font-size:15px;color:black">
+          </font>
+        </div>
+        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Copyright reserved &copy;</font></div>
+      </td>
+    </tr>
+  </table>
+    <input type="hidden" name="number" value="1">
+  </form>
+  <map name="Map">
+    <area shape="rect" coords="10,9,63,27" onClick="on_img('previous');return true">
+    <area shape="rect" coords="80,9,129,27" onClick="on_img('next');return true">
+  </map>
+</body>
