@@ -1,0 +1,513 @@
+<html> 
+<head>
+<meta name="agmips" content="1.145267">
+ 
+<title>BlueMountain.com- Choose Your eCard</title>
+ <SCRIPT LANGUAGE="JavaScript">
+<!-- HIDE FROM OLD BROWSERS
+glbStdFeatures = "width=400,height=320,resizable=yes,scrollbars=yes,toolbar=no";
+glbStdFeaturesExcSize = "resizable=yes,scrollbars=yes,toolbar=no";
+
+var newwin;
+function encodePurl(purl){
+  purl=purl.replace(/http:\/\//,"");
+  purl=purl.replace(/\&/g,"|");
+  purl=purl.replace(/\?/g,"_");
+  purl=purl.replace(/\=/g,":");
+  purl=purl.replace(/\%20/g,"perc20");
+  purl=purl.replace(/ /g,"perc20");
+  purl=purl.replace(/\+/g,"%20");
+  purl=purl.replace(/#.*$/,"");
+  purl=purl.replace(/%(\d+)/g,"perc$1");
+  return purl;
+}
+
+function decodePurl(purl){
+  purl=purl.replace(/\|/g,"&");
+  purl=purl.replace(/_/g,"?");
+  purl=purl.replace(/:/g,"=");
+  purl=purl.replace(/perc(\d+)/g,"%$1");
+  purl=purl.replace(/\/popup\/signin\.pd/,"/index.pd");
+  purl=purl.replace(/\/popup\/signout\.pd/,"/index.pd");
+  if(purl){
+    purl="http://"+purl;
+  }
+  return purl;
+}
+
+function openJoin(url, purl, width, height, windowname, intX, intY) {
+  if(!purl)
+  {
+    purl=window.location.href;
+  }
+  if(!width)
+  {
+    width='300';
+  }
+  if(!height)
+  {
+    height='320';
+  }
+  if(!windowname)
+  {
+    windowname = "joinwin";
+  }
+  if(!intX)
+  {
+    intX=0;
+  }
+  if(!intY)
+  {
+    intY=0;
+  }
+  purl = encodePurl(purl);
+  if(url.indexOf("ostatus") >= 0)
+  {
+    url = url.replace(/ostatus/,"purl="+purl+"&ostatus");
+  }
+  else
+  {
+    url += "&purl=" + purl;
+  }
+  pageindex = -1;
+  questionindex = -1;
+  questionindex = url.indexOf("?");
+  if (url.indexOf("offer.pd")>0)
+  {
+    pageindex = url.indexOf("offer.pd")
+  }
+  else if (url.indexOf("announce.pd")>0)
+  {
+    pageindex = url.indexOf("announce.pd")
+  }
+  else if (url.indexOf("marketingpop.pd")>0)
+  {
+    pageindex = url.indexOf("marketingpop.pd")
+  }
+
+  if(pageindex < questionindex)
+  {
+    if (intX || intY)
+    {
+      strWinFeatures="resizable=no,screenX="+intX+",screenY="+intY+",left="+intX+",top="+intY+",scrollbars=no,width="+width+",height="+height;
+      newwin = window.open(url,windowname,strWinFeatures);
+    }
+    else
+    {
+      strWinFeatures="resizable=no,scrollbars=no,width="+width+",height="+height;
+      newwin = window.open(url,windowname,strWinFeatures);
+    }
+    newwin.focus();
+  }
+  else
+  {
+    window.document.location.href=url;
+  }
+}
+
+function openOfferPop(url, cookiename, cookiedays)
+{
+  purl = window.location.href;
+
+  if(!url)
+  {
+    var url = "/popup/offer.pd?";
+    if (purl.indexOf("cnp") >= 0)
+    {
+      url = url + "cnp=1"
+    }
+  }
+
+  var intSw = window.screen.availWidth;
+  var intSh = window.screen.availHeight;
+  var intW = 300;
+  var intH = 320;
+  var intX=intSw - intW;
+  var intY=intSh - intH;
+
+  if (cookiename)
+  {
+    var allcookies = document.cookie;
+    var pos = allcookies.indexOf(cookiename);
+//only pop the window if we don't see the cookie
+    if (pos == -1)
+    {
+      SECONDS_PER_DAY = 86400;
+      myMinTimeOut    = SECONDS_PER_DAY*cookiedays;
+      myDate          = new Date();
+      myDate.setTime(myDate.getTime()+(myMinTimeOut*1000));
+      document.cookie = cookiename + "=true; expires=" + myDate.toGMTString();
+      openJoin(url,0,0,0,0,intX,0);
+    }
+  }
+  else
+  {
+    openJoin(url,0,0,0,0,intX,0);
+  }
+}
+
+//Generic Open Window
+function OpenNewWindow(url,winwidth,winheight,bar)
+{
+  NewWindow = window.open(url,'descr','toolbar=no,location=no,directories=no,status=no,menubar=no,resizable=no,copyhistory=no,width='+winwidth+',height='+winheight+',scrollbars='+bar)
+}
+
+// NO MORE HIDING -->
+</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+
+var blnDoPopAway = true;
+var BLN_POPAWAY  = true;
+
+var popURL  = '';
+var popH    = 420;
+var popW    = 500;
+var popCN   = '';
+var popCD   = 7;
+
+function processOnUnload() {
+  setTimeout("delay()",500);
+  if(blnDoPopAway && BLN_POPAWAY)
+  {
+    popAway();
+  }
+}
+
+function processOnClick() {
+  setDoPopAway(false);
+  setTimeout("delay()",500);
+}
+
+function setDoPopAway(blnValue) {
+  blnDoPopAway = blnValue;
+}
+
+function delay() {
+  return true;
+}
+
+function popAway(URL, height, width, cookiename, cookiedays) {
+  if (URL)          { popURL = URL; }
+  if (height)       { popH   = height; }
+  if (width)        { popW   = width; }
+  if (cookiename)   { popCN  = cookiename; }
+  if (cookiedays)   { popCD  = cookiedays; }
+  
+  var strWinFeatures = "resizeable=yes,scrollbars=yes,width="+popW+",height="+popH;
+  
+  if (popCN) {
+    var allcookies = document.cookie;
+    var pos = allcookies.indexOf(popCN);
+    // only pop the window if we don't see the cookie
+    if (pos == -1) {
+      SECONDS_PER_DAY   = 86400;
+      myMinTimeOut      = SECONDS_PER_DAY*popCD;
+      myDate            = new Date();
+      myDate.setTime(myDate.getTime()+(myMinTimeOut*1000));
+      document.cookie = popCN + "=true; expires=" + myDate.toGMTString();
+      popAwayWin = window.open(popURL, "popaway", strWinFeatures);
+    }
+  } else {
+    popAwayWin = window.open(popURL, "popaway", strWinFeatures);
+  }
+  return;
+}
+
+function addPopAwayHandlers(URL, height, width, cookiename, cookiedays) {
+  if (URL)          { popURL = URL; }
+  if (height)       { popH   = height; }
+  if (width)        { popW   = width; }
+  if (cookiename)   { popCN  = cookiename; }
+  if (cookiedays)   { popCD  = cookiedays; }
+  var browser = navigator.appName;
+  if (browser == "Microsoft Internet Explorer") {
+    strBrowser = "ie";
+  }
+  else if (browser == "Netscape") {
+    strBrowser = "ns";
+  }
+
+  if(strBrowser=="ie") {
+    document.onclick   = processOnClick;
+    document.onkeydown = processOnClick;
+    window.onunload    = processOnUnload;
+  }
+  else if(strBrowser=="ns") {
+    window.captureEvents(Event.CLICK|Event.KEYDOWN|Event.UNLOAD);
+    window.onclick   = processOnClick;
+    window.onkeydown = processOnClick;
+    window.onunload  = processOnUnload;
+  }
+}
+</script>
+<SCRIPT LANGUAGE="JavaScript"> 
+function openExternalLink1() {window.open("http://ads.adsag.com/html.ng/adsize=cdlink&page=card&site=bg&product=3034615&artist=0&memstat=afu")} 
+</script> 
+<style type="text/css">
+.text {font:11px verdana;}
+a.text, a.text:visited, a.text:active {font:11px verdana,Arial,Helvetica,sans-serif;}
+.uber {font:12px verdana;}
+.bread, a.bread, a.bread:visited, a.bread:active {color:#000066; font:bold 10px verdana,Arial,Helvetica,sans-serif;}
+.ad, a.ad:link, a.ad:visited, a.ad:active {font-family: verdana, Arial, helvetica, sans-serif; font-size: 11px;}
+#nav_table {background-color:#6699FF}
+.siteerror {color:#ff0000; font:bold 12px Arial, Helvetica, sans-serif; text-decoration:none;}
+</style> 
+<SCRIPT LANGUAGE="JavaScript">
+var DEBUG = 0;
+var SITE  = 'BMA';
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="/partner/triggerParams.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+triggerParms["cpp_4"] = "memnum:0";
+memstatus = "AFU";
+if (memstatus == "MCP")
+{
+  triggerParms["cpp_5"] = "ismember:1";
+}
+else
+{
+  triggerParms["cpp_5"] = "ismember:0";
+}
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="/partner/stdLauncher.js"></SCRIPT> 
+<meta name="DCSext.ag_brdc" content="Celebrations/Events>Anniversary>Congratulations>2" />
+<script language="JavaScript">var mjc_ck_name = "tpc2";
+var useg_ck_name = "useg";
+var cmpn_ck_name = "cmpn";</script>
+<script language="JavaScript" src="http://www.imgag.com/js/cookie_util.js"></script>
+<script language="JavaScript" src="http://www.imgag.com/js/useg.js"></script>
+<meta name="DCSext.ag_tseg" content="B" />
+<meta name="DCSext.ag_tseg2" content="B" />
+<meta name="WT.sv" content="ag427" />
+<meta name="DCS.dcssip" content="www.bluemountain.com" />
+<meta name="DCSext.ag_cache" content="W" />
+</head> 
+ 
+
+     <BODY bgcolor="#FEFDEF" leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 link="#333399" vlink="#333399" onUnload='Poll(); return true;' >
+ 
+   
+  
+<a name="top"></a> 
+<center> 
+ 
+<SCRIPT LANGUAGE="JavaScript"> 
+// add to favorites popup 
+function openFavoritesPop() 
+  { 
+  aWindow=window.open("", "AddFavorite", glbStdFeatures); 
+  aWindow.focus(); 
+    } 
+</script> 
+<table border=0 cellpadding=0 cellspacing=0 width=770 bgcolor="#FFFFFF"> 
+<tr> 
+  <td width=2 bgcolor="#6699FF"><img src="http://www.imgag.com/bma/space.gif" width=2 height=5></td> 
+  <td valign="top" align="center" width=638 bgcolor="#FFFFFF"> 
+ 
+
+ 
+  
+<form name="customForm" method="post" action="custom.pd"> 
+ <table border=0 cellpadding=5 cellspacing=0 bgcolor="#FFFFFF"> 
+<tr> 
+  <td class="text">&nbsp;</td> 
+</tr> 
+</table>
+ <!--card is here--> 
+<table width="580" cellspacing="0" cellpadding="0"                           BGCOLOR="#FFFFFF" style = "color: #003300; "><tr><td>
+   <center>
+   <b><i><font face="Comic Sans MS, Arial, Helvetica" color="#0033CC">Dear Ni </font></i></b>
+   <br><IMG src="http://www.imgag.com/product/full/ap/3034615/twopeascp.gif"  ALT="animation" WIDTH="250" HEIGHT="286" border="0" vspace="5">
+   <br><b><font face="Comic Sans MS, Arial, Helvetica">
+	We are like a couple of peas in a pod...<br>
+ 	Happy Anniversary
+   <br>
+</b>
+   <font face="Comic Sans MS, Arial, Helvetica">
+</center><blockquote><p style=" font-family: &lt;Font Family&gt;; font-weight: &lt;Font Weight&gt;; font-style: &lt;Font Style&gt;; font-size: &lt;Font Size&gt;px; color: &lt;Font Color&gt;; " >
+  Little Pudding, I am the luckiest man in the whole world because I have you.
+  Even though we are still in a pod, we enjoy touching and talking with each
+  other. Nine years have passed by, however, my love to you is still the
+  same. There were undoubtly some arguments between us, however, these
+  arguments have made us grow and better understand each other. Let's 
+  celebrate our love and marriage in a green pod. It's like no one can
+  disturb us :). 
+</p></blockquote><center><br>
+     <br>
+</font>
+   <b><i><font face="Comic Sans MS, Arial, Helvetica" COLOR="#0033CC"></font></i></b>
+   <noembed><bgsound src="http://www.imgag.com/product/full/ap/3034615/music.mid"  loop=infinite></noembed>
+   <embed src="http://www.imgag.com/product/full/ap/3034615/music.mid"  width=2 height=0 autostart=true loop=true HIDDEN=TRUE></embed>
+</td> </tr></table> <table cellspacing="0" cellpadding="0"                           width="580">
+                 
+                 <tr>
+                 <td>
+                 <script language="Javascript">
+                 <!--
+                      function callorder(strMusicChoice) {
+                        var blnOnOffButton = 0;
+                        var blnMusicOn = document.customForm.blnMusicOn.value;
+
+                        if (!strMusicChoice)
+                        {
+                          strMusicChoice = '';
+                          blnOnOffButton = 1;
+                        }
+                        if (blnOnOffButton == 1) {
+                          if (blnMusicOn.substr(0,1)  == "Y") {
+                            document.customForm.blnMusicOn.value = 'N'
+                          } else {
+                            document.customForm.blnMusicOn.value = 'Y'
+                          }
+                        } 
+                        var url = window.location.pathname;
+                        if (url.indexOf("display.pd")>0)
+                        { 
+                          var newURL = "http://" + window.location.host + window.location.pathname + "?";
+                          var query = window.location.search.substring(1);
+                          var pairs = query.split("&");
+                          var blnMusicOnFound = 0;
+                          var blnmcFound = 0;
+                          for (var i=0; i<pairs.length; i++) {
+                            var pos = pairs[i].indexOf('=');
+                            if (pos == -1) continue;
+                            var argname = pairs[i].substring(0,pos);
+                            var value = pairs[i].substring(pos+1);
+                            if (blnOnOffButton == 1) {
+                              if (argname == "blnMusicOn") {
+                                blnMusicOnFound = 1;
+                                if (blnMusicOn.substr(0,1) == "Y") {
+                                  newURL += "blnMusicOn=N&";
+                                } else {
+                                  newURL += "blnMusicOn=Y&";
+                                }
+                              } else {
+                                newURL += argname + "=" + value + "&";
+                              }
+                            } else { //mc
+                              if (argname == "mc") {
+                                blnmcFound = 1;
+                                newURL += "mc=" + strMusicChoice + "&";
+                              } else {
+                                newURL += argname + "=" + value + "&";
+                              }
+                            }
+                          }
+                          if (blnOnOffButton == 1 && blnMusicOnFound == 0) {
+                            newURL += "blnMusicOn=N&";
+                          }
+                          if (blnOnOffButton == 0 && blnmcFound == 0) {
+                            newURL += "mc=" + strMusicChoice + "&";
+                          }
+                          window.self.location.href = newURL;
+                        } else {
+                          document.customForm.submit();
+                        }
+                      }
+                 -->
+                 </script>
+                  </td></tr> 
+                                <tr>
+                                <td align=center><table id="nav_table" border="0" cellpadding="0" cellspacing="1">
+                                <tr><td  id="nav_table" align="center" valign="bottom" class="text">
+                                <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="3" width="578">
+                                <tr><td align="center" valign="bottom" class="text">Change the music on this eCard!&nbsp;
+     <select onchange="callorder(this.options[this.selectedIndex].value)"
+                       name="mc" size="1">
+                        <option value="originalcardmusic.mid" >Original Card Music</option><option value="nomusic" >No Music</option><option value="sillyyou.mid" >Strolling Along</option><option value="happydance.mid" >Easy Swing</option><option value="kookystroll.mid" >Goofy Groove</option><option value="crescendo.mid" >Days Go By</option><option value="pluckyone.mid" >Marching Fun</option><option value="hapcampr.mid" >Happy Day</option><option value="softly.mid" >Relax, Unwind</option><option value="newfriendship.mid" >New Friendship</option><option value="statelyclassic.mid" >Classic Dance</option><option value="miamimoon.mid" >Latin style</option><option value="congrats.mid" >Fanfare of Congrats</option><option value="pals4ever.mid" >Sincerity Sonnet</option><option value="marryme.mid" >New Beginnings</option><option value="countryheart.mid" >Gentle Stride</option><option value="bchbrand.mid" >Fanfare March</option>
+                      </select> </td></tr>
+                                <tr><td align="center" valign="bottom" class="text">(Select an option from the drop down box to change the music on this eCard.)</td></tr>
+                                </table></td></tr>
+                                </table>
+                                </td>
+                                </tr>
+                                <tr><td> 
+                            
+                 <a  href="javascript:callorder();">
+                 <img src="http://www.imgag.com/bma/button/nomusic.gif" border=0>
+                 </a></td></tr></table>
+                     <table width="100%">
+                     <tr><td>
+                   <input type="hidden" name="UPDprd" value="eydMQVJHRV9YJzogJycsICdMQVJHRV9ZJzogJycsICdBUlRJU1ROQU1FJzogJ2J5IEthcmVuIEx5
+biBNb3JzZScsICdQRFRZUEUnOiAnQVAnLCAnTElDRU5TRV9VUkwnOiAnJywgJ1BIT1RPX1gnOiAn
+JywgJ1BIT1RPX1knOiAnJywgJ0xJQ1RFWFQnOiAnS2FyZW4gTHluIE1vcnNlJywgJ1BSSUNFQ09E
+RSc6ICcxMzYnLCAnTElDQ09ERSc6ICcyNTcnLCAnRVhBTVBMRUNPREUnOiAnJywgJ1NFUklFU1BF
+UklPRCc6ICcnLCAnUFJJQ0VBTVQnOiAnMS4wMCcsICdSRVBPUlRUWVBFJzogJ0FQJywgJ0FSVElT
+VENSRURJVEhUTUwnOiAnPGEgaHJlZj0iL3NoYXJlL21pc2MvbWlkaS5wZCI+TUlESTwvYT4gTXVz
+aWMgY29tcG9zZWQsIGFycmFuZ2VkIGFuZCBwcm9ncmFtbWVkIFwwMTIgICAgICAgIGJ5IDxhIGhy
+ZWY9Ii9zaGFyZS9hcnRpc3QvamFtZXMucGQiPlJpY2hhcmQgQS4gSmFtZXM8L2E+LCAmY29weTsg
+Q29weXJpZ2h0IChQKSAxOTk4LiA8YnI+XDAxMiAgICAgICAgIEFsbCByaWdodHMgcmVzZXJ2ZWRc
+MDEyJywgJ1BST0RVQ1ROVU1CRVInOiAnMzAzNDYxNScsICdTRVJJRVNMRU5HVEgnOiAnJywgJ1RJ
+VExFJzogJ0xpa2UgUGVhcyBpbiBhIFBvZCd9
+"> 
+                   </td></tr>
+                   <tr><td>
+                   <input type="hidden" name="UPDpers" value="W3snVkFMVUUnOiAnJywgJ1BFUlNOVU1CRVInOiAnMTYwNicsICdERVNDUklQVElPTic6ICdGb250
+IENvbG9yJywgJ1BFUlNUQUcnOiAnRkNPTE9SJywgJ1BFUlNMRU5HVEgnOiAnMjUwJ30sIHsnVkFM
+VUUnOiAnJywgJ1BFUlNOVU1CRVInOiAnMTYwNycsICdERVNDUklQVElPTic6ICdGb250IEZhbWls
+eScsICdQRVJTVEFHJzogJ0ZGQU1JTFknLCAnUEVSU0xFTkdUSCc6ICcyNTAnfSwgeydWQUxVRSc6
+ICcnLCAnUEVSU05VTUJFUic6ICcxNjA4JywgJ0RFU0NSSVBUSU9OJzogJ0ZvbnQgV2VpZ2h0Jywg
+J1BFUlNUQUcnOiAnRldFSUdIVCcsICdQRVJTTEVOR1RIJzogJzI1MCd9LCB7J1ZBTFVFJzogJycs
+ICdQRVJTTlVNQkVSJzogJzE2MDknLCAnREVTQ1JJUFRJT04nOiAnRm9udCBTdHlsZScsICdQRVJT
+VEFHJzogJ0ZTVFlMRScsICdQRVJTTEVOR1RIJzogJzI1MCd9LCB7J1ZBTFVFJzogJycsICdQRVJT
+TlVNQkVSJzogJzE2MTAnLCAnREVTQ1JJUFRJT04nOiAnRm9udCBTaXplJywgJ1BFUlNUQUcnOiAn
+RlNJWkUnLCAnUEVSU0xFTkdUSCc6ICcyNTAnfSwgeydQRVJTTlVNQkVSJzogJzE2MTEnLCAnREVT
+Q1JJUFRJT04nOiAiWydTdHJvbGxpbmcgQWxvbmcnLCAnc2lsbHl5b3UubWlkJ118WydFYXN5IFN3
+aW5nJywgJ2hhcHB5ZGFuY2UubWlkJ118WydHb29meSBHcm9vdmUnLCAna29va3lzdHJvbGwubWlk
+J118WydEYXlzIEdvIEJ5JywnY3Jlc2NlbmRvLm1pZCddfFsnTWFyY2hpbmcgRnVuJywgJ3BsdWNr
+eW9uZS5taWQnXXxbJ0hhcHB5IERheScsICdoYXBjYW1wci5taWQnXXxbJ1JlbGF4LCBVbndpbmQn
+LCAnc29mdGx5Lm1pZCddfFsnTmV3IEZyaWVuZHNoaXAnLCduZXdmcmllbmRzaGlwLm1pZCddfFsn
+Q2xhc3NpYyBEYW5jZScsICdzdGF0ZWx5Y2xhc3NpYy5taWQnXXxbJ0xhdGluIHN0eWxlJywgJ21p
+YW1pbW9vbi5taWQnXXxbJ0ZhbmZhcmUgb2YgQ29uZ3JhdHMnLCdjb25ncmF0cy5taWQnXXxbJ1Np
+bmNlcml0eSBTb25uZXQnLCAncGFsczRldmVyLm1pZCddfFsnTmV3IEJlZ2lubmluZ3MnLCAnbWFy
+cnltZS5taWQnXXxbJ0dlbnRsZSBTdHJpZGUnLCdjb3VudHJ5aGVhcnQubWlkJ118WydGYW5mYXJl
+IE1hcmNoJywgJ2JjaGJyYW5kLm1pZCddIiwgJ1BFUlNUQUcnOiAnTXVzaWMxJywgJ1BFUlNMRU5H
+VEgnOiAnMjUwJ30sIHsnUEVSU05VTUJFUic6ICcxNDY1JywgJ09QVElPTkFMJzogJ04nLCAnUEVS
+U1RBRyc6ICdNc2cnLCAnUEVSU0xFTkdUSCc6ICcyNTAnLCAnREVTQ1JJUFRJT04nOiAnTWVzc2Fn
+ZSd9XQ==
+">
+                   </td></tr>
+                
+                     </table>
+                  
+               <script language="JavaScript">
+               function openViralLink(productNumber, blnNewWindow)
+               {
+                 if (typeof(setDoPopAway) != "undefined")
+                 {
+                     setDoPopAway(false);
+                 }
+                 var URL = 'http://www.bluemountain.com/custom.pd?path=35608&';
+                 URL += 'prodnum=' + productNumber;
+                 if (blnNewWindow == true)
+                 {
+                   aWindow = window.open(URL);
+                   aWindow.focus();
+                 } else {
+                   window.self.location.href = URL;
+                 }  
+               }
+               </script>
+                
+<br> 
+ 
+<!--end card is here--> 
+
+  
+ 
+
+ <!-- endif from if strError --> 
+ 
+</td> 
+</tr> 
+</table> 
+</form> 
+<br>&nbsp;<br><table border=0 cellpadding=0 cellspacing=0 width=770>
+</table> 
+</center> 
+ 
+
+<!-- page generated: Sat Jul 24 08:04:40 2004 -->
+
+<script language="JavaScript" src="http://www.imgag.com/js/wt.js"></script><NOSCRIPT><IMG BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://statse.webtrendslive.com/dcsew60m1oifwznbkznc6j9ix_5x7j/njs.gif?dcsuri=/nojavascript&WT.js=No"></NOSCRIPT>
+</body> 
+</html> 
