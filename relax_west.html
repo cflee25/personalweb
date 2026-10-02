@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Relaxation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+<!-- a:hover{color:red} -->
+</style>
+<SCRIPT language="JavaScript">
+<!--
+function on_img(move)
+{   var imagelist = new Array(12);
+    var textlist=new Array(12);
+	var index;
+    imagelist[0] ="images/relaxation/WestUS/Yosemite.jpg";
+	textlist[0]="Yosemite, CA";
+	imagelist[1]="images/relaxation/WestUS/Bellagio.jpg";
+	textlist[1]="Bellagio Fountain Show, NV";
+    imagelist[2]="images/relaxation/WestUS/GoldenGateBridge.jpg";
+	textlist[2]="Golden Gate Bridge, CA";
+    imagelist[3]="images/relaxation/WestUS/GrandCanyon.jpg";
+	textlist[3]="Grand Canyon, AZ";
+    imagelist[4]="images/relaxation/WestUS/HearstCastle.jpg";
+	textlist[4]="Hearst Castle, CA";
+    imagelist[5]="images/relaxation/WestUS/JPL.jpg";
+	textlist[5]="Family Day at JPL, CA";
+    imagelist[6]="images/relaxation/WestUS/MontereyBay.jpg";
+	textlist[6]="Monterey Bay, CA";
+    imagelist[7]="images/relaxation/WestUS/PasadenaCityHall.jpg";
+	textlist[7]="Pasadena City Hall, CA";
+    imagelist[8]="images/relaxation/WestUS/Solvang.jpg";
+	textlist[8]="Solvang, CA";
+    imagelist[9]="images/relaxation/WestUS/SpaceNeedle.jpg";
+	textlist[9]="Seattle Space Needle, WA";
+    imagelist[10]="images/relaxation/WestUS/Theotihuacan.jpg";
+	textlist[10]="Theotihuacan, Mexico";
+    imagelist[11]="images/relaxation/WestUS/ThornHammer.jpg";
+	textlist[11]="Bryce Canyon, UT";
+
+    if (move=="previous"){
+       document.display.number.value--;
+    }
+    if (move=="next"){
+       document.display.number.value++;
+    }
+	if (document.display.number.value==0){
+       document.display.number.value=12;
+	}
+	if (document.display.number.value==13){
+       document.display.number.value=1;
+	}
+	// calculate the array index 
+    index =document.display.number.value - 1;
+	//alert(index);
+    document.picture.src=imagelist[index];
+	document.display.desc.value=textlist[index];
+    return;
+}
+
+function initial()
+{   
+    document.display.desc.value="Yosemite, CA";
+	document.display.number.value=1;
+	//alert(document.display.desc.value);
+}
+// -->
+</SCRIPT>
+
+</head>
+
+<body bgcolor=#FFFFFF onLoad=initial();>
+<form name="display">
+  <table width="100%" border="0" cellspacing="0" cellpadding="10" align="center">
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><font color="#6666FF" face="Arial, Helvetica, sans-serif"><b><font color="#333399">West 
+          USA </font></b></font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><img src="images/arrow.gif" width="141" height="34" border="0" usemap="#Map"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><font color="#6666FF" face="Arial, Helvetica, sans-serif"><font color="#000000" size="2"> 
+          <input type="text" name="desc" border=0 value="Yosemite, CA" size="24" disabled="true">
+          </font></font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="191" valign="top" align="left"> 
+        <div align="center"><img src="images/relaxation/WestUS/Yosemite.jpg" border="1" name="picture" value="Yosemite, CA"></div>
+      </td>
+    </tr>
+    <tr>
+      <td height="2" valign="top" align="left">
+        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Copyright 
+          reserved &copy;</font></div>
+      </td>
+    </tr>
+  </table>
+<input type="hidden" name="number" value="1">
+  </form>
+<map name="Map">
+  <area shape="rect" coords="10,9,63,27" onClick="on_img('previous');return true">
+  <area shape="rect" coords="80,9,129,27" onClick="on_img('next');return true">
+</map>
+</body>
+</html>

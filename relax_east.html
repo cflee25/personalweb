@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Relaxation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+<!-- a:hover{color:red} -->
+</style>
+<SCRIPT language="JavaScript">
+<!--
+function on_img(image,text)
+{   
+    document.picture.src=image;
+	//alert(text);
+	document.display.desc.value=text;
+	//alert(document.display.desc.value);
+}
+function initial()
+{   
+    //document.picture.src="images/relaxation/EastUS/Baltimore.jpg";
+    
+	document.display.desc.value="Baltimore Harbor, MD";
+	//alert(document.display.desc.value);
+}
+// -->
+</SCRIPT>
+
+</head>
+
+<body bgcolor=#FFFFFF onLoad=initial();>
+<form name="display">
+  <table width="100%" border="0" cellspacing="0" cellpadding="10" align="center">
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><font color="#6666FF" face="Arial, Helvetica, sans-serif"><b><font color="#333399">East 
+          USA </font></b></font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><img src="images/label.gif" width="365" height="34" border="0" usemap="#Map"></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="2" valign="top" align="left"> 
+        <div align="center"><font color="#6666FF" face="Arial, Helvetica, sans-serif"><font color="#000000" size="2">
+          <input type="text" name="desc" border=0 value="Twin Tower, NY" size="22" disabled=true>
+          </font></font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="191" valign="top" align="left"> 
+        <div align="center"><img src="images/relaxation/EastUS/TwinTower.jpg" border="1" name="picture"></div>
+      </td>
+    </tr>
+    <tr>
+      <td height="2" valign="top" align="left">
+        <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Copyright reserved &copy;</font></div>
+      </td>
+    </tr>
+  </table>
+  <map name="Map"> 
+  <!area shape="circle" coords="17,17,13" onClick="on_img('images/relaxation/EastUS/Fall.jpg','Fall in Greenbelt, MD');return true" >
+  <area shape="circle" coords="47,17,13" onClick="on_img('images/relaxation/EastUS/TwinTower.jpg','Twin Tower, NY');return true">
+  <area shape="circle" coords="77,17,13" onClick="on_img('images/relaxation/EastUS/CherryBlossom.jpg','Cherry Blossom, DC');return true">
+  <area shape="circle" coords="107,17,13" onClick="on_img('images/relaxation/EastUS/DisneyWorld.jpg','Disney World, FL');return true">
+  <area shape="circle" coords="137,17,13" onClick="on_img('images/relaxation/EastUS/NaturalBridge.jpg','Natural Bridge, VA');return true">
+  <area shape="circle" coords="167,17,13" onClick="on_img('images/relaxation/EastUS/NiagaraFalls.jpg','Niagara Falls, NY');return true">
+  <area shape="circle" coords="197,17,13" onClick="on_img('images/relaxation/EastUS/StoneMt.jpg','Stone Mountain, GA');return true">
+  <area shape="circle" coords="227,17,13" onClick="on_img('images/relaxation/EastUS/Shenandoah.jpg','Shenandoah, VA');return true">
+  <area shape="circle" coords="257,17,13" onClick="on_img('images/relaxation/EastUS/Snow.jpg','Snow in Greenbelt, MD');return true">
+  <area shape="circle" coords="287,17,13" onClick="on_img('images/relaxation/EastUS/LurayCavern.jpg','Luray Cavern, VA');return true">
+  <!area shape="circle" coords="317,17,13" onClick="on_img('images/relaxation/EastUS/UMCP.jpg','University of Maryland, MD');return true">
+  <!area shape="circle" coords="347,17,13" onClick="on_img('images/relaxation/EastUS/Baltimore.jpg','Baltimore Harbor, MD');return true">
+</map>
+</form>
+</body>
+</html>
