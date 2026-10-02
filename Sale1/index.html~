@@ -1,0 +1,17 @@
+<html>
+<head>
+<link rel="shortcut icon" href="http://sma-www.cfa.harvard.edu/favicon.ico">
+</head>
+<title> Sale </title>
+<body>
+<BR>
+<OL>
+   <li>
+   <div align="center"><img src="laptop.jpg"></div>
+   </li>
+   <li>
+   <div align="center"><img src="stroller.jpg"></div>
+   </li>
+</OL>
+</body>
+</html>
